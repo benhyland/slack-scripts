@@ -8,8 +8,8 @@ require 'unirest'
 @delete_url = 'https://slack.com/api/files.delete'
 
 def check_response(response)
-  if response.code != 200 || !(response.body)
-    raise "bad response: #{response.code}\nbody:\n#{response.raw_body}"
+  if !response || response.code != 200 || !(response.body)
+    raise "bad response: #{response}"
   end
   response.body
 end
