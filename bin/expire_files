@@ -1,0 +1,6 @@
+#!/bin/bash
+
+set -e
+
+bundle install
+bundle exec bin/run.rb slack_expire_files
